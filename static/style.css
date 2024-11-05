@@ -1,0 +1,122 @@
+/* Solarized Color Scheme */
+:root {
+  --base03: #002b36;
+  --base02: #073642;
+  --base01: #586e75;
+  --base00: #657b83;
+  --base0: #839496;
+  --base1: #93a1a1;
+  --base2: #eee8d5;
+  --base3: #fdf6e3;
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red: #dc322f;
+  --magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--base03);
+    --foreground-color: var(--base0);
+    --link-color: var(--orange);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: var(--base3);
+    --foreground-color: var(--base00);
+    --link-color: var(--orange);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--orange);
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+input[type="text"], input[type="url"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  border: 1px solid var(--foreground-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--orange);
+  color: var(--background-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}
+
+.messages {
+  list-style-type: none;
+  padding: 0;
+}
+
+.messages li {
+  background-color: var(--red);
+  color: var(--background-color);
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+a {
+  color: var(--link-color);
+}
+
+.feed-url {
+  display: flex;
+  align-items: center;
+}
+
+.feed-url input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.title-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,136 @@
+{
+  "source_rss_feed_url": "https://example.com/feed.xml",
+  "database": "episodes.db",
+  "audio_output_directory": "assets/podcast",
+  "audio_url_prefix": "https://example.com/audioblog/",
+  "feed_output_filename": "feed.xml",
+  "reprocess_episode": false,
+  "process_articles_since": "01-2020",
+  "episode_description_template": "For the original, text version of this blog, go to: {episode_link}.",
+  "output_rss_feed": {
+    "title": "Podcast Title",
+    "link": "https://example.com",
+    "description": "Podcast Description",
+    "language": "en-US",
+    "last_build_date": null,
+    "update_period": "hourly",
+    "update_frequency": 1,
+    "generator": "Your Generator",
+    "image": {
+      "url": "https://example.com/image.jpg",
+      "title": "Podcast Image Title",
+      "link": "https://example.com",
+      "width": 32,
+      "height": 32
+    },
+    "atom_link": {
+      "href": "https://example.com/audioblog/feed.xml",
+      "rel": "self",
+      "type": "application/rss+xml"
+    },
+    "itunes": {
+      "summary": "iTunes Summary",
+      "author": "Author Name",
+      "explicit": false,
+      "image": {
+        "href": "https://example.com/image.jpg"
+      },
+      "owner": {
+        "name": "Author Name",
+        "email": "author@example.com"
+      },
+      "subtitle": "Podcast Subtitle",
+      "category": [
+        {
+          "text": "Education",
+          "subcategory": "Self-Improvement"
+        },
+        {
+          "text": "Society & Culture",
+          "subcategory": "Philosophy"
+        }
+      ]
+    },
+    "googleplay": {
+      "category": "Education"
+    },
+    "podcast": {
+      "locked": "yes",
+      "license": "Your License",
+      "medium": "podcast",
+      "podping": {
+        "usesPodping": "true"
+      },
+      "value": {
+        "type": "lightning",
+        "method": "keysend",
+        "suggested": "0.00000005000",
+        "recipients": [
+          {
+            "type": "node",
+            "split": "99",
+            "address": "02f1246b8fe904a5c5193504d8069532b1fb8692b84fb3eb64318b201238f60ff1",
+            "name": "Main Recipient"
+          },
+          {
+            "name": "boostbot@fountain.fm",
+            "type": "node",
+            "split": "1",
+            "address": "03b6f613e88bd874177c28c6ad83b3baba43c4c656f56be1f8df84669556054b79",
+            "customKey": "906608",
+            "customValue": "01IMQkt4BFzAiSynxcQQqd",
+            "fee": "true"
+          }
+        ]
+      }
+    }
+  },
+  "blog_to_speech_llm": {
+    "enabled": true,
+    "endpoint": "http://127.0.0.1:11434",
+    "model": "dolphin-llama3:70b",
+    "prompt": "Please convert the following text into a format suitable for an audio narration, with focus on minimal wording changes. Preserve markdown formatting. The text should be easy to understand for listeners without visual cues, such as parentheses or list formatting. Maintain the original meaning and details but adapt it for spoken language, do not summarize, simplify, keep the content as close to the original as possible. Break up long sentences if necessary to enhance clarity and listenability. If you add numbered bullet points, write them in words instead of numbers (\"First.\" instead of \"1.\"). Change words into pronounced forms. \"fountain.fm\" would become \"fountain dot fm\", \"2.0\" would be \"two point oh\". Only output converted text, nothing else. Text:.",
+    "max_chunk_size": 1000,
+    "max_length_difference": 0.1
+  },
+  "llm_verifier": {
+    "enabled": true,
+    "endpoint": "http://localhost:11434",
+    "model": "gemma3:27b",
+    "prompt": "Verify that the output text maintains the same meaning and content as the input text, without adding extra information or omitting important details. The output should be adapted for spoken language but should not significantly alter the original content. Respond with 'Valid' if the output meets these criteria, or 'Wrong' if it does not. Do not output anything else.",
+    "expected_output": "Valid"
+  },
+  "tts_options": {
+    "ref_audio": "",
+    "pause": 0.5,
+    "alpha": 0.3,
+    "beta": 0.7,
+    "diffusion_steps": 5,
+    "embedding_scale": 1.0,
+    "min_similarity": 0.9,
+    "pause_h1_before": 2.0,
+    "pause_h1_after": 0.7,
+    "pause_h2_before": 1.5,
+    "pause_h2_after": 0.7,
+    "pause_h3_before": 0.7,
+    "pause_h3_after": 0.7,
+    "split_at_headings": false,
+    "max_retries": 1
+  },
+  "prefix_audio_files": ["intro.wav"],
+  "postfix_audio_files": ["outro.wav"],
+  "audio_speedup": 1.3,
+  "mp3_conversion": {
+    "bitrate": "192k",
+    "codec": "libmp3lame"
+  },
+  "preprocess_regexps": [
+    {
+      "regexp": " 1-2 ",
+      "replacement": " one to two "
+    }
+  ],
+  "skip_regexps": [
+    "[Aa]udio"
+  ]
+}

@@ -1,0 +1,11 @@
+config.json
+episodes*.db
+markdown_to_speech
+poetry.lock
+*.xml
+config*.json
+run*.sh
+*_audio
+web-config.json
+your_audio
+web-episodes.db
