@@ -1,16 +1,39 @@
 # RSS-to-Podcast Converter
 
+*Motivation*: Not everyone has time to read, but reading is essential. This tool enables you to listen to what you want to read instead. It has two modes - you can convert your own blog to a podcast, or you can create a personal podcasts from articles from all around the web.
+
+![Icon of an orange astronaut reading](static/icons/icon-192x192.png)
+
 A Python-based application that converts blog posts from an RSS feed into a value-for-value-enabled podcast, allowing listeners to engage with content via audio. This project automates the transformation of blog articles into podcast episodes by using text-to-speech technology, providing an easy way for listeners to consume written content as audio.
 
 Another use-case is converting websites into podcast episodes. They are added manually using `add_website.py`. In this case, there is no source RSS feed.
 
 For this use-case, there is also a web application, where users can generate their own podcast feed from articles they want to read. It powers [loaditfor.me](https://loaditfor.me/). Feel free to run your own instance, see [README-web.md](README-web.md).
 
+
+## Showcase
+
+Podcasts from blogs:
+ - [Juraj's blogs](https://juraj.bednar.io/en/jurajs-blog-podcast-edition/) - my blogs (I'm Juraj, pleased to meet you)
+ - [Liberation travel newsletters](https://liberation.travel/liberation-travel-hacks-month-letter/) - if you are interested about being a global opportunist, listen to this, it is amazing. Links to audio below the list of text issues of the newsletter.
+
+Website:
+ - If you want to generate your own private podcasts from articles you want to read, check out [Loaditfor.me](https://loaditfor.me/)
+
+I would appreciate if you used a value4value podcasting 2.0 app such as [Fountain.fm](https://fountain.fm/) to listen to these and contribute some sats over the Lightning network.
+
 ## Overview
 
 The RSS-to-Podcast Converter pulls articles from an RSS feed, processes the content using a text-to-speech (TTS) model, and generates podcast episodes in MP3 format. The episodes are then assembled into an RSS feed compatible with podcast players, complete with metadata, audio, and descriptions. The generated podcast includes a **value-for-value** system, enabling micropayments and splits for creators via the Lightning Network.
 
 This project uses a database to track processed episodes and ensure each article is only converted once. It allows manual skipping of articles that may not be suitable for TTS conversion, such as posts with embedded videos or images.
+
+## How to run
+
+This tool was tested on Mac with Apple Silicon and local AI models. It uses three types of AI models:
+ - An LLM using [ollama](https://ollama.com/) to convert a blog into something that is better suited for reading. It deals with bulletpoints and such, so it is more natural. It also uses the LLM to verify that the model did not hallucinate, keeping original if in doubt
+ - A text to speech based on my project [markdown2audio](https://github.com/jooray/markdown2audio) and [my fork of StyleTTS2](https://github.com/jooray/StyleTTS2) for the rendering. It fixed a few bugs from the original. Note: It can also clone your voice, if you want your blogs to be read in your voice, which is pretty cool.
+ - A speech to text model based on [pywhispercpp](https://github.com/absadiki/pywhispercpp) to verify the generated audio. Yes, even the text to speech sometimes hallucinates, we try again with different settings if it is the case.
 
 ## Features
 
