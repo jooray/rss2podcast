@@ -35,6 +35,8 @@ This tool was tested on Mac with Apple Silicon and local AI models. It uses thre
  - A text to speech based on my project [markdown2audio](https://github.com/jooray/markdown2audio) and [my fork of StyleTTS2](https://github.com/jooray/StyleTTS2) for the rendering. It fixed a few bugs from the original. Note: It can also clone your voice, if you want your blogs to be read in your voice, which is pretty cool.
  - A speech to text model based on [pywhispercpp](https://github.com/absadiki/pywhispercpp) to verify the generated audio. Yes, even the text to speech sometimes hallucinates, we try again with different settings if it is the case.
 
+I recommend running on Apple Silicon, where there's acceleration for both Ollama LLMs and Whisper. I have not tried it on anything else, but it might work (especially if you point it to another ollama instance over the network).
+
 ## Features
 
 - **Automated Podcast Generation**: Converts blog articles from an RSS feed into podcast episodes using a TTS model.
