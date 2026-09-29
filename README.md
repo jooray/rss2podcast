@@ -2,6 +2,22 @@
 
 *Motivation*: Not everyone has time to read, but reading is essential. This tool enables you to listen to what you want to read instead. It has two modes - you can convert your own blog to a podcast, or you can create a personal podcasts from articles from all around the web.
 
+<!-- jooray-links:start -->
+### More from me
+
+**Related projects**
+
+- [livecaster-llm](https://github.com/jooray/livecaster-llm): live co-pilot for podcast hosts
+- [podcaster-boost-dashboard](https://github.com/jooray/podcaster-boost-dashboard): turn Core Lightning invoices into a podcasting 2.0 boost dashboard
+- [markdown2audio](https://github.com/jooray/markdown2audio): convert Markdown to audio with StyleTTS
+- [kindbeamer](https://github.com/jooray/kindbeamer): open-source Send to Kindle client for macOS, Linux and Android
+- [reformatter-translator](https://github.com/jooray/reformatter-translator): reformat OCRed books and translate them with an LLM
+
+**Full project showcase:** [RSS2Podcast in my project showcase](https://juraj.bednar.io/showcase/#MED-03), or [all my projects](https://juraj.bednar.io/showcase/).
+
+I write about building things on [my blog](https://juraj.bednar.io/en/blog-en/). I also wrote a cypherpunk novel, [Tamers of Entropy](https://tamersofentropy.net/), and there is a [trailer](https://tamersofentropy.net/#trailer).
+<!-- jooray-links:end -->
+
 ![Icon of an orange astronaut reading](static/icons/icon-192x192.png)
 
 A Python-based application that converts blog posts from an RSS feed into a value-for-value-enabled podcast, allowing listeners to engage with content via audio. This project automates the transformation of blog articles into podcast episodes by using text-to-speech technology, providing an easy way for listeners to consume written content as audio.
